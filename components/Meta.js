@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head'
 import { apiEndpoint } from 'prismic-configuration';
-import { reset, globals, medias } from 'styles';
 
 export default () => (
   <Fragment>
@@ -19,8 +18,5 @@ export default () => (
       `}} />
       <script src="//static.cdn.prismic.io/prismic.min.js" />
     </Head>
-    <style jsx global>{ reset }</style>
-    <style jsx global>{ globals }</style>
-    <style jsx global>{ medias }</style>
   </Fragment>
 )

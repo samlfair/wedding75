@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { default as NextLink } from 'next/link'
 import { Navigation, LanguageSwitcher } from 'components'
-import { header } from 'styles'
 
 const Header = ({ menu, altLangs, currentLang, isMyMainLanguage }) => (
   <Fragment>
@@ -16,7 +15,6 @@ const Header = ({ menu, altLangs, currentLang, isMyMainLanguage }) => (
         </ul>
       </nav>
     </header>
-    <style jsx global>{ header }</style>
   </Fragment>
 );
 

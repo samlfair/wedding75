@@ -5,22 +5,9 @@ import { Header, SliceZone } from 'components'
 import DefaultLayout from 'layouts'
 import Error from './_error';
 
-
 export default class Page extends React.Component {  
   // Fetch relevant data from Prismic before rendering
-  static async getInitialProps(context) {
-    const { uid, locale } = context.query;
-    const req = context.req;
-    const page = await this.getPage(locale, uid, req);
-    // Extra call to render the edit button, in case we've been routed client-side
-    if (process.browser) window.prismic.setupEditButton();
-    return {
-      ...page,
-      doc: page.document,
-      uid: uid,
-      locale: locale
-    };
-  }
+
 
   static async getPage(locale, uid, req) {
     try {
@@ -67,4 +54,18 @@ export default class Page extends React.Component {
       );
     }
   }
+}
+
+export async function getInitialProps(context) {
+  const { uid, locale } = context.query;
+  const req = context.req;
+  const page = await this.getPage(locale, uid, req);
+  // Extra call to render the edit button, in case we've been routed client-side
+  if (process.browser) window.prismic.setupEditButton();
+  return {
+    ...page,
+    doc: page.document,
+    uid: uid,
+    locale: locale
+  };
 }
