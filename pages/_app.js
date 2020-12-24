@@ -1,7 +1,7 @@
 import App from 'next/app'
 
-import '../src/styles/reset.css'
-import '../src/styles/index.css'
+import './styles/reset.css'
+import './styles/index.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
@@ -12,4 +12,3 @@ MyApp.getInitialProps = async (appContext) => {
 }
 
 export default MyApp
-
